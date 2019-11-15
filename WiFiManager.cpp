@@ -421,15 +421,15 @@ void WiFiManager::handleRoot() {
   }
 
   String page = FPSTR(HTTP_HEAD);
-  page.replace("{v}", "Options");
+  page.replace("{v}", "Prism:WiFi setup");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
   page += FPSTR(HTTP_HEAD_END);
   page += String(F("<h1>"));
-  page += _apName;
+  page += String(F("Welcome to Prism"));
   page += String(F("</h1>"));
-  page += String(F("<h3>WiFiManager</h3>"));
+  page += String(F("<h3>Let's get you connected</h3>"));
   page += FPSTR(HTTP_PORTAL_OPTIONS);
   page += FPSTR(HTTP_END);
 
@@ -442,7 +442,7 @@ void WiFiManager::handleRoot() {
 void WiFiManager::handleWifi(boolean scan) {
 
   String page = FPSTR(HTTP_HEAD);
-  page.replace("{v}", "Config ESP");
+  page.replace("{v}", "Prism:Select Wi-Fi");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
@@ -658,7 +658,7 @@ void WiFiManager::handleInfo() {
   DEBUG_WM(F("Info"));
 
   String page = FPSTR(HTTP_HEAD);
-  page.replace("{v}", "Info");
+  page.replace("{v}", "Prism:Info");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
@@ -699,7 +699,7 @@ void WiFiManager::handleReset() {
   DEBUG_WM(F("Reset"));
 
   String page = FPSTR(HTTP_HEAD);
-  page.replace("{v}", "Info");
+  page.replace("{v}", "Prism:Info");
   page += FPSTR(HTTP_SCRIPT);
   page += FPSTR(HTTP_STYLE);
   page += _customHeadElement;
